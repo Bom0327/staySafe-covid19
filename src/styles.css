@@ -1,0 +1,26 @@
+header {
+  padding: 1rem 2rem;
+  background: #3b5998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  color: #fff;
+}
+
+.map-img {
+  width: 100%;
+}
+
+.covid-img {
+  width: 370px;
+  margin-bottom: 50px;
+}
+
+footer {
+  text-align: center;
+  margin: 3%;
+
+}

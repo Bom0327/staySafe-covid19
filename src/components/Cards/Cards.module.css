@@ -1,0 +1,47 @@
+.cardContainer {
+  padding: 3% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardTitle {
+  padding-left: 32px;
+  padding-bottom: 16px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+@media (max-width: 576px) {
+  .cardTitle {
+    font-size: 24px;
+  }
+  /* .tested {
+    display: none;
+  } */
+}
+
+.confirmed {
+  border-bottom: 10px solid #ff6384;
+}
+
+.recovered {
+  border-bottom: 10px solid #36a2eb;
+}
+
+.deaths {
+  border-bottom: 10px solid #c9cbcf;
+}
+
+.active {
+  border-bottom: 10px solid #ffcd56;
+}
+
+.tested {
+  border-bottom: 10px solid #4bc0c0;
+}
+
+
+
+
+
+
