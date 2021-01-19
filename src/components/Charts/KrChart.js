@@ -9,17 +9,16 @@ export const KrMixChart = () => {
   useEffect(() => {
     const fetchApi = async () => {
       const res = await fetchData();
-      const reverseRes = res.reverse();
 
       setApiData({
-        labels: reverseRes.map(data => data.date),
+        labels: res.map(data => data.date),
         datasets: [
           {
             label: 'New Confirmed',
             borderColor: 'salmon',
             backgroundColor: 'salmon',
             fill: true,
-            data: reverseRes.map(data => data.newConfirmed),
+            data: res.map(data => data.newConfirmed),
             type: 'bar',
             yAxisID: 'y-axis-1'
           },
@@ -28,7 +27,7 @@ export const KrMixChart = () => {
             borderColor: '#ff6384',
             backgroundColor: '#ff6384',
             fill: false,
-            data: reverseRes.map(data => data.confirmed),
+            data: res.map(data => data.confirmed),
             type: 'line',
             yAxisID: 'y-axis-2',
             pointRadius: 1,
@@ -39,7 +38,7 @@ export const KrMixChart = () => {
             borderColor: '#36a2eb',
             backgroundColor: '#36a2eb',
             fill: false,
-            data: reverseRes.map(data => data.recovered),
+            data: res.map(data => data.recovered),
             type: 'line',
             yAxisID: 'y-axis-2',
             pointRadius: 1,
@@ -50,7 +49,7 @@ export const KrMixChart = () => {
             borderColor: '#c9cbcf',
             backgroundColor: '#c9cbcf',
             fill: false,
-            data: reverseRes.map(data => data.deaths),
+            data: res.map(data => data.deaths),
             type: 'line',
             yAxisID: 'y-axis-2',
             pointRadius: 1,

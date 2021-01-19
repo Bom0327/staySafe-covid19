@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { makeStyles,Paper, AppBar, Tabs, Tab, Typography, Box } from '@material-ui/core';
+import { makeStyles, AppBar, Tabs, Tab, Typography, Box } from '@material-ui/core';
 import AusScreen from './AusScreen';
 import JpScreen from './JpScreen';
 import KrScreen from './KrScreen';

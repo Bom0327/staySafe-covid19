@@ -19,6 +19,18 @@ header h1 {
   margin-bottom: 5%;
 }
 
+@media (max-width: 768px) {
+  .covid-img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .covid-img {
+    width: 250px;
+  }
+}
+
 footer {
   text-align: center;
   margin: 3%;

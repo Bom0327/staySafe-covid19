@@ -21,8 +21,8 @@ export const fetchData = async () => {
       const today = new Date(item.day)
       const yesterday = new Date(today - 1000 * 60 * 60 * 24)
       const theDayBeforeYesterday = new Date(today - 1000 * 60 * 60 * 24 * 2)
-      const date1 = yesterday.toLocaleDateString()
-      const date2 = theDayBeforeYesterday.toLocaleDateString()
+      const date1 = yesterday.toISOString().split('T')[0]
+      const date2 = theDayBeforeYesterday.toISOString().split('T')[0]
 
       const obj1 = {
         confirmed: item.cases.total,

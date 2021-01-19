@@ -20,7 +20,7 @@ export const fetchData = async () => {
     const modifiedData = data.reduce((acc, item, itemIndex, arr) => {
       const today = new Date(item.day)
       const yesterday = new Date(today-1000 * 60 * 60 * 24)
-      const date = yesterday.toLocaleDateString()
+      const date = yesterday.toISOString().split('T')[0]
   
       const obj = {
         confirmed: item.cases.total,
