@@ -53,7 +53,7 @@ export const fetchData = async () => {
 
 const url2 = 'https://covid-19-statistics.p.rapidapi.com/reports'
 
-export const fetchProvinceTotalData = async () => {
+export const fetchProvinceData = async () => {
   try {
     const response = await axios.get(url2, {
       params: { iso: 'JPN' },
@@ -67,42 +67,12 @@ export const fetchProvinceTotalData = async () => {
     const modifiedData = data.map((item) => ({
       prefecture: item.region.province,
       confirmed: item.confirmed,
-      active: item.active,
-      deaths: item.deaths
-    }));
-
-    modifiedData.forEach((item, i) => {
-      item.id = i + 1;
-    });
-
-    return modifiedData;
-
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export const fetchProvinceNewData = async () => {
-  try {
-    const response = await axios.get(url2, {
-      params: { iso: 'JPN' },
-      headers: {
-        'x-rapidapi-key': '6f2df78c88msha87c04480806b5ap14b47ajsn0b3d00797cce',
-        'x-rapidapi-host': 'covid-19-statistics.p.rapidapi.com'
-      }
-    });
-
-    const data = response.data.data;
-    const modifiedData = data.map((item) => ({
-      prefecture: item.region.province,
       newConfirmed: item.confirmed_diff,
+      active: item.active,
       newActive: item.active_diff,
-      newDeaths: item.deaths_diff,  
+      deaths: item.deaths,
+      newDeaths: item.deaths_diff
     }));
-
-    modifiedData.forEach((item, i) => {
-      item.id = i + 1;
-    });
 
     return modifiedData;
 
@@ -110,5 +80,64 @@ export const fetchProvinceNewData = async () => {
     console.log(error);
   }
 }
+   
+
+// export const fetchProvinceTotalData = async () => {
+//   try {
+//     const response = await axios.get(url2, {
+//       params: { iso: 'JPN' },
+//       headers: {
+//         'x-rapidapi-key': '6f2df78c88msha87c04480806b5ap14b47ajsn0b3d00797cce',
+//         'x-rapidapi-host': 'covid-19-statistics.p.rapidapi.com'
+//       }
+//     });
+
+//     const data = response.data.data;
+//     const modifiedData = data.map((item) => ({
+//       prefecture: item.region.province,
+//       confirmed: item.confirmed,
+//       active: item.active,
+//       deaths: item.deaths
+//     }));
+
+//     modifiedData.forEach((item, i) => {
+//       item.id = i + 1;
+//     });
+
+//     return modifiedData;
+
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// export const fetchProvinceNewData = async () => {
+//   try {
+//     const response = await axios.get(url2, {
+//       params: { iso: 'JPN' },
+//       headers: {
+//         'x-rapidapi-key': '6f2df78c88msha87c04480806b5ap14b47ajsn0b3d00797cce',
+//         'x-rapidapi-host': 'covid-19-statistics.p.rapidapi.com'
+//       }
+//     });
+
+//     const data = response.data.data;
+//     const modifiedData = data.map((item) => ({
+//       prefecture: item.region.province,
+//       newConfirmed: item.confirmed_diff,
+//       newActive: item.active_diff,
+//       newDeaths: item.deaths_diff,  
+//     }));
+
+//     modifiedData.forEach((item, i) => {
+//       item.id = i + 1;
+//     });
+
+//     return modifiedData;
+
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 
