@@ -42,7 +42,10 @@ function a11yProps(index) {
 
 const useStyles = makeStyles({
   header: {
-    padding: 5
+    padding: 5,
+    display: 'flex',
+    justifyContent : 'center',
+    alignItems: 'center'
   }
 
 });

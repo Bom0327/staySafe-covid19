@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { makeStyles, AppBar, Tabs, Tab, Typography, Box } from '@material-ui/core';
+import { makeStyles, AppBar, Tabs, Tab, Typography, Box, FormHelperText } from '@material-ui/core';
 import AusScreen from './AusScreen';
 import JpScreen from './JpScreen';
 import KrScreen from './KrScreen';
@@ -43,7 +43,10 @@ function a11yProps(index) {
 
 const useStyles = makeStyles({
   header: {
-    padding: 5
+    padding: 5,
+    display: 'flex',
+    justifyContent : 'center',
+    alignItems: 'center'
   }
 
 });

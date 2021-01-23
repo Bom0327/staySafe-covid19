@@ -1,9 +1,6 @@
 header {
   padding: 1rem 2rem;
   background: #3b5998;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 header h1 {
