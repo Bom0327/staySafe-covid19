@@ -61,7 +61,7 @@ export const fetchData = async () => {
       }
       return acc;
     }, []);
-    
+
     return modifiedData;
 
   } catch (error) {
